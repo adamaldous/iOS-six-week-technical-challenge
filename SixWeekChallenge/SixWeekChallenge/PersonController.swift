@@ -34,7 +34,7 @@ class PersonController {
         
         if let personIndex = people.indexOf(person) {
             people.removeAtIndex(personIndex)
-            
+            self.saveToPersistentStorage()
         }
     }
     

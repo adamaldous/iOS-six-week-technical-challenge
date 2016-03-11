@@ -60,13 +60,13 @@ class PairsTableViewController: UITableViewController {
 
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         if editingStyle == .Delete {
             
             let person = PersonController.sharedController.people[indexPath.row]
-            
             PersonController.sharedController.removePerson(person)
-            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            tableView.reloadData()
         }
     }
 
@@ -114,7 +114,6 @@ class PairsTableViewController: UITableViewController {
         
         PersonController.sharedController.people.shuffleInPlace()
         tableView.reloadData()
-//        print(PersonController.sharedController.people[indexPath.row])
     }
 
 }
