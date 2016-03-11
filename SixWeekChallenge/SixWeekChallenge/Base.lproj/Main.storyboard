@@ -9,29 +9,36 @@
         <scene sceneID="0lm-LF-wM6">
             <objects>
                 <tableViewController id="IcY-Pg-7ON" customClass="PairsTableViewController" customModule="SixWeekChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="iPB-v7-CNH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iPB-v7-CNH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" textLabel="P1d-y9-SW2" style="IBUITableViewCellStyleDefault" id="MDu-N0-ZMs">
-                                <rect key="frame" x="0.0" y="113.5" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" textLabel="P1d-y9-SW2" detailTextLabel="MH0-Rg-eyz" style="IBUITableViewCellStyleValue1" id="MDu-N0-ZMs">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MDu-N0-ZMs" id="TKO-ab-dvM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P1d-y9-SW2">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MH0-Rg-eyz">
+                                            <rect key="frame" x="263.5" y="12" width="41.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="tFK-5J-QXb" kind="show" identifier="toEditPerson" action="showDetailViewController:sender:" id="szN-ub-FHw"/>
+                                    <segue destination="dlT-hJ-xxr" kind="show" identifier="toEditPerson" id="eeR-OK-s0l"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -52,7 +59,7 @@
                         </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gW5-GD-iyn">
                             <connections>
-                                <segue destination="tFK-5J-QXb" kind="show" identifier="toAddPerson" id="K3a-6G-ohL"/>
+                                <segue destination="dlT-hJ-xxr" kind="show" identifier="toAddPerson" id="UyA-GM-Btr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -61,47 +68,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ra9-mb-iZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1115" y="413"/>
-        </scene>
-        <!--Add/Edit-->
-        <scene sceneID="bEk-5u-X0B">
-            <objects>
-                <viewController id="tFK-5J-QXb" customClass="DetailViewController" customModule="SixWeekChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ICr-L6-Aa9"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gv4-mq-JOL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0CN-JF-Gjz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAd-ln-d2a">
-                                <rect key="frame" x="20" y="72" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="CAd-ln-d2a" firstAttribute="leading" secondItem="0CN-JF-Gjz" secondAttribute="leading" constant="20" id="dSi-jM-lZc"/>
-                            <constraint firstItem="CAd-ln-d2a" firstAttribute="top" secondItem="ICr-L6-Aa9" secondAttribute="bottom" constant="8" id="ppM-4m-K6w"/>
-                            <constraint firstAttribute="trailing" secondItem="CAd-ln-d2a" secondAttribute="trailing" constant="20" id="wSJ-oA-J46"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add/Edit" id="Fo5-Mm-DMM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0AU-TQ-gCv">
-                            <connections>
-                                <action selector="saveButtonTapped:" destination="tFK-5J-QXb" id="x4h-bK-wW4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="nameTextField" destination="CAd-ln-d2a" id="Ef1-dg-aWs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s88-Fs-7O1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1513" y="413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e7I-Sg-nRJ">
@@ -122,8 +88,49 @@
             </objects>
             <point key="canvasLocation" x="725" y="413"/>
         </scene>
+        <!--Add/Edit-->
+        <scene sceneID="7oe-5b-rYe">
+            <objects>
+                <viewController id="dlT-hJ-xxr" customClass="DetailViewController" customModule="SixWeekChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="452-iJ-K3p"/>
+                        <viewControllerLayoutGuide type="bottom" id="PcS-21-CH6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iF2-4b-Bwj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47P-Ra-qiN">
+                                <rect key="frame" x="20" y="72" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="47P-Ra-qiN" secondAttribute="trailing" constant="20" id="3G6-pq-Ixq"/>
+                            <constraint firstItem="47P-Ra-qiN" firstAttribute="leading" secondItem="iF2-4b-Bwj" secondAttribute="leading" constant="20" id="Jbg-3f-HYI"/>
+                            <constraint firstItem="47P-Ra-qiN" firstAttribute="top" secondItem="452-iJ-K3p" secondAttribute="bottom" constant="8" id="ZMC-P2-nSG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add/Edit" id="ySr-9N-whJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VSN-Gv-OKF">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="dlT-hJ-xxr" id="oK0-IB-L4g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="47P-Ra-qiN" id="isU-xa-JhZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YfV-Bc-fio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515" y="413"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="szN-ub-FHw"/>
+        <segue reference="eeR-OK-s0l"/>
     </inferredMetricsTieBreakers>
 </document>

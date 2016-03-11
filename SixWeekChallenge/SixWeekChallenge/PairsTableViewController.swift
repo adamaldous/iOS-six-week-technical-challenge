@@ -13,7 +13,6 @@ class PairsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,10 +28,10 @@ class PairsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return PersonController.sharedController.people.count / 2
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return PersonController.sharedController.people.count / 2
+//    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -45,6 +44,7 @@ class PairsTableViewController: UITableViewController {
         let person = PersonController.sharedController.people[indexPath.row]
         
         cell.textLabel?.text = person.name
+        cell.detailTextLabel?.text = "\(Int(indexPath.row) / 2)"
 
         return cell
     }
@@ -57,17 +57,19 @@ class PairsTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
+            
+            let person = PersonController.sharedController.people[indexPath.row]
+            
+            PersonController.sharedController.removePerson(person)
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.
@@ -110,7 +112,9 @@ class PairsTableViewController: UITableViewController {
     
     @IBAction func randomButtonPressed(sender: AnyObject) {
         
-        
+        PersonController.sharedController.people.shuffleInPlace()
+        tableView.reloadData()
+//        print(PersonController.sharedController.people[indexPath.row])
     }
 
 }

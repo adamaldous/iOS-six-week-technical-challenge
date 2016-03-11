@@ -21,3 +21,6 @@ Take as much time as needed to complete the challenge. Add a note at the bottom 
 Example:
 
 ```Completed in 2.5 hours.```
+
+
+It took me 2 hours and 20 minutes to complete this challenge
